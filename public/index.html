@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatTime! - Real Time Communications</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- 🔝 Navbar -->
+<nav id="navbar">
+  <div class="nav-brand">
+    <a href="#"><img src="images/icono.png" alt="logo" class="logo-img" /></a>
+    <span class="nav-logo-text">ChatTime!</span>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="nav-links" id="nav-links">
+    <a href="#">Inicio</a>
+    <a href="#about_us">Sobre Nosotros</a>
+    <a href="#contact">Contacto</a>
+
+    <!-- 🔐 Botón dinámico de autenticación -->
+    <div class="containerButtons">
+      <div id="authButtonContainer">
+        <button class="btn btn-violet ms-3" data-bs-toggle="modal" data-bs-target="#authModal">
+          Iniciar sesión
+        </button>
+      </div>
+      <div id="authButtonContainer">
+        <button class="btn-registrer btn btn-violet ms-3" data-bs-toggle="modal" data-bs-target="#registerModal">
+          Registrarse
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- 🎥 Videollamada -->
+<main class="main-container py-5">
+  <div class="container text-center">
+    <div class="mb-4 d-flex justify-content-center gap-3 flex-wrap">
+      <button id="startButton" class="btn btn-violet">Iniciar llamada</button>
+      <button id="endButton" class="btn btn-violet-dark">Detener llamada</button>
+      <button id="nextButton" class="btn btn-secondary" disabled>Próxima llamada</button>
+      <button id="saveFavoriteButton" class="btn btn-violet-dark" style="display: none;" title="Guardá esta conexión para otro día">
+      <i class="fa-solid fa-heart"></i> Guardar como favorito
+      </button>
+    </div>
+    <div class="row justify-content-center g-4 videos">
+      <div class="col-12 col-md-6"><video id="localVideo" autoplay muted></video></div>
+      <div class="col-12 col-md-6"><video id="remoteVideo" autoplay></video></div>
+    </div>
+     <!-- FAVORITOS: agregalo acá mismo, dentro del container violeta -->
+    <div class="mt-4 px-4 py-3 rounded-4 favoritos-box">
+     <h5 class="text-white mb-3">
+     <i class="fa-solid fa-star text-warning me-2"></i>Tus favoritos
+     </h5>
+    <ul id="favoritesList" class="list-group list-group-flush "></ul>
+    </div>
+  </div>
+</main>
+
+  <hr />
+
+  <!-- 🧠 Sobre Nosotros -->
+<section id="about_us">
+  <div class="about-container scroll-fade">
+    <div class="about-text scroll-fade">
+      <h5><i>Hablá con extraños</i></h5>
+      <h1>Conocé gente con tus mismos <span class="gradient-text">intereses</span></h1>
+      <p>Conectate con gente real de todas partes del mundo.</p>
+    </div>
+    <div class="about-image scroll-fade">
+      <img src="images/imagen4.png" alt="Video call illustration">
+    </div>
+  </div>
+
+  <div class="about-container1 scroll-fade">
+    <div class="about-text scroll-fade">
+      <h5><i>Desde cualquier parte del mundo</i></h5>
+      <h1>Videochateá de manera simple y <span class="gradient-text1">divertida</span></h1>
+      <p>Diseñada para hacer que tus conexiones sean fáciles y seguras. Los moderadores hacen que nuestra plataforma sea segura para todos los usuarios.</p>
+    </div>
+    <div class="about-image scroll-fade">
+      <img src="images/imagen2.png" alt="Video call illustration">
+    </div>
+  </div>
+
+  <div class="about-container scroll-fade">
+    <div class="about-text scroll-fade">
+      <h5><i>Encontrá gente como vos</i></h5>
+      <h1>Hablá, aprendé cosas nuevas o hacé <span class="gradient-text2">amigos</span></h1>
+      <p>Disfrutá nuestra plataforma libre de anuncios.</p>
+    </div>
+    <div class="about-image scroll-fade">
+      <img src="images/imagen1.webp" alt="Video call illustration">
+    </div>
+  </div>
+</section>
+
+<!-- 💬 Testimonios -->
+<section class="testimonials">
+  <h2>Nuestros usuarios opinan</h2>
+  <p>Hemos invitado a desconocidos al azar, tanto hombres como mujeres, a probar nuestra plataforma de chat por video. Esto es lo que opinaron:</p>
+
+  <div class="testimonial-cards">
+    <div class="card">
+      <span class="quote">❝</span>
+      <p>Al principio era escéptico, pero rápidamente me convertí en fan de esta plataforma como alternativa a ChatHub y Omegle... libre de spam, bien moderada...</p>
+      <div class="user">
+        <img src="images/avatar-emoji-emoticon-emotion-expression-profile.svg" alt="User icon">
+        <div><strong>Extraño #3</strong></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="quote">❝</span>
+      <p>He probado muchas plataformas para chatear por video con desconocidos... ChatTime! parece la mejor alternativa a Omegle... He hecho muchos amigos...</p>
+      <div class="user">
+        <img src="images/avatar-emoji-emoticon-emotion-expression-profile.svg" alt="User icon">
+        <div>
+          <strong>Extraño #4</strong><br>
+          <span class="role">Usuario Premium</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="quote">❝</span>
+      <p>¡ChatTime! es la mejor alternativa a Omegle que he probado! Hizo que conectar con desconocidos por videochat fuera divertido y fácil...</p>
+      <div class="user">
+        <img src="images/avatar-emoji-emoticon-emotion-expression-profile.svg" alt="User icon">
+        <div>
+          <strong>Extraño #1</strong><br>
+          <span class="role">Beta Tester</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 💖 Favoritos -->
+<section id="favoritos" class="container py-5">
+  <h2 class="text-center mb-4">Mis favoritos</h2>
+  <ul id="listaFavoritos" class="list-group"></ul>
+</section>
+
+  <!-- 📞 Footer -->
+  <footer id="contact">
+    <div class="rr-ss">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-discord"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    <div class="enlaces">
+      <p><a href="#">Política de privacidad</a></p>
+      <p>|</p>
+      <p><a href="#">Términos de servicio</a></p>
+    </div>
+    <p>Interfaces de Usuario y Tecnologías Web © 2025.</p>
+  </footer>
+
+  <!-- 🔐 Modal de Login / Registro -->
+  <div class="modal fade" id="authModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">Ingresá a ChatTime!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="email" id="correo_electronico" class="form-control mb-2" placeholder="Correo electrónico" />
+          <input type="password" id="contrasenia" class="form-control mb-2" placeholder="Contraseña" />
+          <button class="btn btn-violet w-100 mb-2" onclick="login()">Iniciar sesión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title">Ingresá a ChatTime!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="nickname" class="form-control mb-2" placeholder="Nickname" />
+          <input type="email" id="register-email" class="form-control mb-2" placeholder="Correo electrónico" />
+          <input type="password" id="register-contrasenia" class="form-control mb-2" placeholder="Contraseña" />
+          <button class="btn btn-violet w-100 mb-2" onclick="register()">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📜 Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll efecto
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // Menú responsive
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Animaciones al hacer scroll
+    const faders = document.querySelectorAll('.scroll-fade');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    faders.forEach(el => appearOnScroll.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,610 @@
+/* ==============================
+   Reset y configuración global
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:#1b1b1b;
+  color: #f8f8f8;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   Navegación
+============================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Navbar normal (inicio) */
+#navbar {
+  transition: all 0.3s ease;
+  padding: 10px 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Clase cuando se hace scroll */
+#navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.3); /* más translúcido */
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espacio entre imagen y texto */
+}
+
+.logo-img {
+  height: 60px; /* o el tamaño que prefieras */
+  width: auto;
+}
+
+.nav-logo-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #b983ff;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+}
+
+.containerButtons {
+ display: flex;
+ gap: 2px;
+}
+
+.btn-registrer{
+   background: #444 !important ;
+}
+
+/* ==============================
+   Responsive Navbar
+============================== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(24, 23, 23, 0.9);
+    flex-direction: column;
+    width: 150px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ==============================
+   Main Container
+============================== */
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0ff;
+  padding: 20px;
+}
+
+/* ==============================
+   Títulos y botones
+============================== */
+.glow-title {
+  color: #b983ff;
+  text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7;
+  font-size: 2.5rem;
+}
+
+.btn-violet,
+.btn-violet-dark {
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 12px #9b59b6;
+}
+
+.btn-violet {
+  background-color: #6c5ce7;
+}
+
+.btn-violet:hover:not(:disabled) {
+  background-color: #a29bfe;
+  box-shadow: 0 0 20px #a29bfe;
+}
+
+.btn-violet:disabled {
+  background-color: #4a3db5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-violet-dark {
+  background-color: #3a0ca3;
+  box-shadow: 0 0 12px #5f0f40;
+}
+
+.btn-violet-dark:hover:not(:disabled) {
+  background-color: #5f0f40;
+  box-shadow: 0 0 20px #ff4fa3;
+}
+
+.btn-violet-dark:disabled {
+  background-color: #2b076f;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ==============================
+   Video
+============================== */
+video {
+  border: 3px solid #a29bfe;
+  border-radius: 16px;
+  background-color: black;
+  box-shadow: 0 0 25px rgba(162, 155, 254, 0.5);
+  width: 100%;
+  /*check this!!*/
+  height: 100%;
+  object-fit: cover;
+}
+
+#localVideo {
+  transform: scaleX(-1);
+}
+
+/* ==============================
+   Secciones generales
+============================== */
+main {
+  padding: 20px;
+}
+
+/* ==============================
+   Testimonios y otras secciones
+============================== */
+#testimonial {
+  padding: 80px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ==============================
+   Responsive ajustes
+============================== */
+@media (max-width: 768px) {
+  .glow-title {
+    font-size: 1.8rem;
+  }
+
+  .mb-4 {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 300px;
+}
+
+/* ==============================
+   About us
+============================== */
+
+#about_us {
+  background-color: #1b1b1b;
+  padding: 60px 20px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.about-text {
+  flex: 1 1 400px;
+}
+.about-text h5 {
+  color: #6c5ce7;
+}
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #00c6ff, #0072ff, #7f00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.gradient-text1 {
+  background: linear-gradient(90deg, #7700ff, #bf00ff, #f700ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.gradient-text2 {
+  background: linear-gradient(90deg, #ff3c00, #ff8800, #cc863b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  /*border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(126, 126, 126, 0.1);*/
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   Footer
+============================== */
+
+footer{
+    background-color:  #1b1b1b;
+    text-align:center;
+    padding: 20px;
+}
+
+.rr-ss{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 20px;
+}
+.rr-ss a {
+    color: #fbdede;
+}
+.rr-ss i{
+    font-size: 30px;
+    padding: 0 30px 30px 30px;
+}
+footer a{
+    text-decoration: none;
+    color: #535353;
+
+}
+footer a:hover{
+    color:#b983ff;
+}
+.enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    word-spacing: 5px;
+    font-size: 18px;
+    margin: 10px;
+    color: #535353;
+
+} 
+@media (min-width:360px) and (max-width: 720px){
+
+    footer{
+        height: 60%;
+        width: 100%;
+    }
+    .rr-ss{
+        padding: 10px;
+    }
+        .rr-ss i{
+            font-size: 80%;
+            padding: 10px
+        }
+        .enlaces{
+            font-size: 80%;
+        }
+    }
+    @media (min-width: 721px){ 
+
+    }
+
+.testimonials {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.testimonials p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.card {
+  background: #6f4eaa;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.card:hover {
+  box-shadow: 0px 10px 10px 5px rgba(182, 182, 182, 1.5);
+  transform: translateY(-12px);
+  opacity: .8;
+}
+
+.quote {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user .role {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ==============================
+   🔐 Estilos del modal de login
+============================== */
+.modal-content {
+    border-radius: 12px;
+    box-shadow: 0 0 20px #6c5ce7;
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.modal-body input {
+    background-color: #2c2c3c;
+    border: 1px solid #6c5ce7;
+    color: #fff;
+}
+
+    .modal-body input::placeholder {
+        color: #aaa;
+    }
+
+.modal-body .btn-violet {
+    background-color: #6c5ce7;
+    border: none;
+    color: #fff;
+}
+
+    .modal-body .btn-violet:hover {
+        background-color: #5a4bd6;
+    }
+
+.modal-body .btn-secondary {
+    background-color: #444;
+    border: none;
+    color: #fff;
+}
+
+    .modal-body .btn-secondary:hover {
+        background-color: #555;
+    }
+
+.favoritos-box {
+  background: linear-gradient(135deg, #353434);
+  box-shadow: 0 0 10px rgba(110, 36, 238, 0.747);
+  border: none;
+}
+.list-group-item {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+/* 🧩 Ajustes definitivos para los botones dentro de la lista de favoritos */
+ul#favoritesList button.btn {
+  padding: 4px 12px !important;
+  font-size: 0.8rem !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: 32px !important;
+}
+
+/* 📞 Botón de llamar */
+ul#favoritesList .btn-success {
+  background-color: #2e7d32 !important;
+  border: none !important;
+}
+
+ul#favoritesList .btn-success:hover {
+  background-color: #388e3c !important;
+}
+
+/* 🗑️ Botón eliminar */
+ul#favoritesList .btn-danger {
+  background-color: #c62828 !important;
+  border: none !important;
+}
+
+ul#favoritesList .btn-danger:hover {
+  background-color: #e53935 !important;
+}
+
+/* 🔠 Íconos más chicos */
+ul#favoritesList .btn i {
+  font-size: 0.85rem !important;
+}
+
+/* 📐 Alineación correcta del contenido dentro del li */
+#favoritesList .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px !important;
+}
+
+/* 🧍 Espaciado entre nombre y estado */
+#favoritesList strong {
+  margin-right: 10px;
+}
+
+/* 🔧 Para asegurar que los botones queden bien al extremo */
+#favoritesList .d-flex.ms-auto {
+  margin-left: auto !important;
+}
+
